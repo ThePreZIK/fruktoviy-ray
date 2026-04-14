@@ -1,0 +1,233 @@
+/* --- Цветовые переменные --- */
+:root {
+    --primary-green: #2ecc71;
+    --dark-green: #27ae60;
+    --accent-yellow: #f1c40f;
+    --text-dark: #2c3e50;
+    --white: #ffffff;
+    --bg-grey: #f4f7f6;
+}
+
+/* --- Общие сбросы стилей --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-grey);
+}
+
+/* --- Навигация --- */
+.navbar {
+    background: var(--white);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    text-transform: uppercase;
+}
+
+.nav-logo span { color: var(--primary-green); }
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li { margin-left: 20px; }
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { color: var(--primary-green); }
+
+/* --- Шапка (Hero) --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1000') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 70px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero h1 span { color: var(--accent-yellow); }
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* --- Кнопки --- */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-whatsapp { background: #25d366; color: white; }
+.btn-call { background: var(--white); color: var(--text-dark); }
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+/* --- Контентная область --- */
+.container {
+    max-width: 1100px;
+    margin: -60px auto 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Сетка товаров --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    position: relative;
+}
+
+.product-card:hover { transform: translateY(-10px); }
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-green);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.product-info { padding: 25px; }
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.price-item { font-size: 0.95rem; color: #666; }
+.price-item strong { color: var(--dark-green); font-size: 1.1rem; }
+
+/* --- Карточки информации --- */
+.info-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.info-card h2 { margin-bottom: 20px; color: var(--dark-green); border-left: 5px solid var(--accent-yellow); padding-left: 15px; }
+
+.map-box {
+    width: 100%;
+    height: 300px;
+    background: #e9ecef;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #888;
+    border: 2px dashed #ccc;
+    margin-top: 20px;
+}
+
+/* --- Подвал --- */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #2c3e50;
+    color: #bdc3c7;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .hero h1 { font-size: 2.2rem; }
+    .container { margin-top: -30px; }
+}
